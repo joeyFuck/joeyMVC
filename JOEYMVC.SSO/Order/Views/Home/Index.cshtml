@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<div>
+    order不允许匿名访问,只有登陆后才能看到我
+</div>
+
+@if (Request.IsAuthenticated)
+{
+    <a>@User.Identity.Name</a><a href="@Url.Action("LogOff")"> 注销</a>
+}
+//order不允许匿名访问，所以这个登陆按钮用不到
+@*else
+{
+    <a href="http://passport.domain.dev:8002?return=http://order.domain.dev:8001" class="btn btn-default">登录</a>
+}*@
+

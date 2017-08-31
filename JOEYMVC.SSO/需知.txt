@@ -1,0 +1,29 @@
+生成解决方案
+
+发布：
+必须将项目发布以后才能部署到IIS，不能直接指定项目的物理路径，
+发到文件系统默认的路径应该是bin\Release\PublishOutput
+
+IIS配置
+网站     端口
+order    8001
+passport 8002
+portal   8003
+
+order是不允许匿名访问的站点
+portal作为主站点，可匿名访问
+passport是认证中心，order跟portal均通过其进行身份验证，登陆
+
+修改host
+127.0.0.1			passport.domain.dev
+127.0.0.1			order.domain.dev
+127.0.0.1			domain.dev
+
+
+参考文章：http://www.cnblogs.com/bidianqing/p/7455627.html
+
+
+
+
+
+

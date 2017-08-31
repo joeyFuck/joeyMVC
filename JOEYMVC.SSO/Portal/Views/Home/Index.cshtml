@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Portal,主站可匿名访问";
+}
+<div>
+    Portal,主站可匿名访问
+</div>
+
+@if (Request.IsAuthenticated)
+{
+    <a>@User.Identity.Name</a><a href="@Url.Action("LogOff")"> 注销</a>
+}
+else
+{
+    <a href="http://passport.domain.dev:8002?return=http://domain.dev:8003" class="btn btn-default">登录</a>
+}
+
